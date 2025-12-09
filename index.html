@@ -1,0 +1,90 @@
+<!DOCTYPE html> <!--Informa el navegador que versió d’HTML s’està utilitzant-->
+<html lang="ca"> <!--llengua-->
+    <head>
+        <meta charset="utf-8" />  
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> <!--adaptació a dispositius mòbils-->
+        <title>STUDY FORM</title>
+        <link href="style.css" rel="stylesheet" /> <!--enllaç al fitxer CSS-->
+    </head>
+
+<body>
+    <header>
+        <div class="logo"> <!--classe que després servirà per modificar el contingut del logo-->
+            <img src="logo.png" alt="Logotip de l'aplicació"> <!--logo web-->
+            <h1>STUDY FORM</h1> <!--títol-->
+        </div>
+
+        <button id="btn-info" class="menu-btn"> <!--classe del botó d'ajuda-->
+            <ion-icon name="information-circle-outline"></ion-icon> <!--Botó d'ajuda (utilitzo https://ionic.io/ionicons per l'icona-->
+            <p>ajuda</p> 
+        </button>
+    </header>   
+<!--Contingut de boto d'ajuda-->
+    <div id="ajuda-info" class="info">
+        <div class="info-content">
+            <span id="close-info" class="close">&times;</span>
+            <h2 class="info-title">Com utilitzar-la?</h2>
+            <ol class="info-list">
+                <li><strong>Escriu el contigut que vols estudiar.</strong></li>
+                <li><strong> Tria el nombre de preguntes i quantes opcions vols.</strong></li>
+                <li><strong>Prem el botó Generar Test i espera uns moments.</strong></li>
+            </ol>
+        </div>
+    </div>
+<!--Genereador de Formularis-->
+    <div class="main-container">
+        <div class="box">
+            <h1>Generador de Formularis</h1>
+            <p>Enganxa el temari per començar.</p>
+            
+            <textarea id="texto-usuario" placeholder="Escriu o enganxa aquí el temari..."></textarea> <!--àrea de text infinita on l'usuari enganxa el temari-->
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="num-preguntes">Nombre de preguntes:</label>
+                    <select id="num-preguntes">
+                        <option value="3">3 Preguntes</option>
+                        <option value="5" selected>5 Preguntes</option>
+                        <option value="10">10 Preguntes</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="num-opciones">Opcions per resposta:</label>
+                    <select id="num-opciones">
+                        <option value="3">3 Opcions (A, B, C)</option>
+                        <option value="4" selected>4 Opcions (A, B, C, D)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="btn-limpiar">
+                    <ion-icon name="trash-outline"></ion-icon> NETEJAR
+                </button>
+                <button id="btn-generar">✨ Generar Test</button>
+            </div>
+        </div>
+
+        <div id="resultado" class="box" style="display:none;">
+            <h2 style="border-bottom: 2px solid #f1f1f1; padding-bottom: 15px;">📝 El teu Test Personalitzat</h2>
+            <div id="contenedor-preguntas"></div>
+            
+            <div id="zona-profesor">
+                <h3><ion-icon name="school-outline"></ion-icon> Zona Professor</h3>
+                <div class="btn-group">
+                    <button id="btn-copiar" class="btn-secondary">📋 Copiar Text</button>
+                    <button id="btn-pdf" class="btn-danger">📄 Guardar PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Treball de Recerca 2024-2025 | Impulsat per <strong>Gemini API</strong></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> 
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script><!--d'on carrego els icones-->
+</body>
+</html>
