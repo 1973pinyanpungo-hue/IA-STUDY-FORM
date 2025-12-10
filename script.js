@@ -39,7 +39,7 @@ btnGenerar.addEventListener('click', async () => {
 
     // UI Càrrega
     btnGenerar.disabled = true;
-    btnGenerar.innerText = "🧠 Pensant preguntes...";
+    btnGenerar.innerText = "Pensant preguntes...";
     divResultado.style.display = 'none';
     divPreguntas.innerHTML = '';
 
@@ -51,7 +51,7 @@ btnGenerar.addEventListener('click', async () => {
         alert("Error: " + error.message);
     } finally {
         btnGenerar.disabled = false;
-        btnGenerar.innerText = "✨ Generar Test";
+        btnGenerar.innerText = "Generar Test";
     }
 });
 
